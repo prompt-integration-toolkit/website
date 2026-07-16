@@ -1,0 +1,99 @@
+.prompt-card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(15, 15, 15, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.prompt-card:hover {
+  transform: translateY(-2px);
+  border-color: #444;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.prompt-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.prompt-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem !important;
+  font-weight: 500;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.icon {
+  color: var(--text-secondary);
+}
+
+.prompt-version {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: var(--hover-bg);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.prompt-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0 0 1.25rem 0;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.prompt-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  color: var(--text-secondary);
+}
+
+.prompt-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.prompt-author {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}

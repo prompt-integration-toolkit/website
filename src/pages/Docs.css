@@ -1,8 +1,6 @@
 .docs-layout {
   display: flex;
   gap: 3rem;
-  padding-top: 3rem;
-  padding-bottom: 4rem;
 }
 
 .docs-sidebar {

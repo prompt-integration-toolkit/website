@@ -1,0 +1,182 @@
+.prompt-details-page {
+  padding-bottom: 2rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--text-primary);
+}
+
+.prompt-layout {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+@media (min-width: 900px) {
+  .prompt-layout {
+    flex-direction: row;
+  }
+}
+
+.prompt-main {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+.prompt-sidebar {
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .prompt-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+  }
+}
+
+.prompt-header {
+  margin-bottom: 3rem;
+}
+
+.prompt-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.prompt-desc-large {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.prompt-content-box {
+  background-color: rgba(15, 15, 15, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+/* Base Markdown Styles */
+.markdown-body {
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.markdown-body h1 { font-size: 2rem; }
+.markdown-body h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+.markdown-body h3 { font-size: 1.25rem; }
+
+.markdown-body p {
+  margin-bottom: 1.25rem;
+}
+
+.markdown-body pre {
+  background-color: #0d0d0d;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+
+.markdown-body code {
+  font-family: var(--font-mono);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  padding: 0;
+  font-size: 0.9em;
+}
+
+/* Sidebar Styles */
+.sidebar-sticky {
+  position: sticky;
+  top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.install-box,
+.metadata-box,
+.tags-box {
+  background-color: rgba(15, 15, 15, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.sidebar-sticky h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.meta-item:last-child {
+  margin-bottom: 0;
+}
+
+.meta-item strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.error-state {
+  text-align: center;
+  padding: 6rem 0;
+}
+
+.error-state h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.error-state p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}

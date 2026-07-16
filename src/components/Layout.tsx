@@ -15,6 +15,7 @@ export function Layout() {
             <span className="logo-text">Prompt Integration Toolkit</span>
           </Link>
           <nav className="nav-links flex gap-8">
+            <Link to="/explore" className="nav-link">Explore</Link>
             <Link to="/docs" className="nav-link">Documentation</Link>
             <a href="https://github.com/prompt-integration-toolkit" target="_blank" rel="noreferrer" className="nav-link">GitHub</a>
           </nav>
