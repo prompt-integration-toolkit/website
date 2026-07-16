@@ -1,0 +1,148 @@
+.docs-layout {
+  display: flex;
+  gap: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+.docs-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border-color);
+  padding-right: 2rem;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .docs-sidebar {
+    display: block;
+  }
+}
+
+.sidebar-sticky {
+  position: sticky;
+  top: 6rem;
+}
+
+.sidebar-title {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar-link {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+  font-weight: 400;
+}
+
+.sidebar-link:hover {
+  color: var(--text-primary);
+}
+
+.docs-content {
+  flex: 1;
+  max-width: 800px;
+}
+
+.docs-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+.docs-section {
+  margin-bottom: 4rem;
+}
+
+.docs-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.docs-section > p {
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+}
+
+.code-block {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+.code-block code {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.command-card {
+  background-color: rgba(15, 15, 15, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.command-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  display: inline-block;
+  background-color: var(--hover-bg);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+}
+
+.command-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.workflow-steps {
+  list-style-position: inside;
+  color: var(--text-secondary);
+}
+
+.workflow-steps li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.workflow-steps strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.workflow-steps code {
+  background-color: var(--card-bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
