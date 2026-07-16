@@ -1,41 +1,41 @@
 # Prompt-Integration-Toolkit Website
 
-O hub central e portal oficial para o ecossistema **Prompt-Integration-Toolkit**. 
+The central hub and official portal for the **Prompt-Integration-Toolkit** ecosystem.
 
-Este repositório contém o código-fonte da aplicação web, que serve como a casa principal do projeto. Aqui você encontrará:
-- A documentação oficial e guias de uso da ferramenta CLI.
-- (Em breve) Explorador público de prompts registrados.
-- (Em breve) Vitrine de usuários e contribuidores da plataforma.
+This repository contains the source code for the web application, which serves as the project's main home. Here you will find:
+- The official documentation and usage guides for the CLI tool.
+- (Coming Soon) Public explorer for registered prompts.
+- (Coming Soon) Showcase of users and platform contributors.
 
-## 🛠 Tecnologias
+## 🛠 Technologies
 
 - **Frontend:** React + Vite
-- **Linguagem:** TypeScript
-- **Estilização:** Vanilla CSS (Design Minimalista P&B)
+- **Language:** TypeScript
+- **Styling:** Vanilla CSS (Minimalist B&W Design)
 - **Backend/DB:** Supabase
-- **Hospedagem:** GitHub Pages
+- **Hosting:** GitHub Pages
 
-## 🚀 Desenvolvimento Local
+## 🚀 Local Development
 
-Para rodar o projeto em sua máquina:
+To run the project on your machine:
 
-1. Clone este repositório:
+1. Clone this repository:
    ```bash
    git clone https://github.com/prompt-integration-toolkit/website.git
    ```
-2. Entre no diretório:
+2. Enter the directory:
    ```bash
    cd website
    ```
-3. Instale as dependências:
+3. Install dependencies:
    ```bash
    npm install
    ```
-4. Inicie o servidor de desenvolvimento:
+4. Start the development server:
    ```bash
    npm run dev
    ```
 
-## 📄 Licença
+## 📄 License
 
-Este projeto faz parte do ecossistema Prompt-Integration-Toolkit.
+This project is part of the Prompt-Integration-Toolkit ecosystem.
