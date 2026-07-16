@@ -1,5 +1,5 @@
 .copy-command {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--card-bg);
@@ -9,11 +9,13 @@
   gap: 1rem;
   font-family: var(--font-mono);
   font-size: 0.9rem;
+  width: 100%;
 }
 
 .copy-command code {
   color: var(--text-primary);
-  white-space: nowrap;
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 
 .copy-btn {
@@ -25,6 +27,7 @@
   background-color: rgba(255, 255, 255, 0.05);
   color: var(--text-secondary);
   transition: all 0.2s;
+  flex-shrink: 0;
 }
 
 .copy-btn:hover {
