@@ -1,4 +1,4 @@
-import { Terminal, Settings, Shield, UserCheck, ListChecks, Search, Cpu, HelpCircle } from 'lucide-react';
+import { Terminal, Settings, FileText, Shield, UserCheck, ListChecks, Search, Cpu, HelpCircle } from 'lucide-react';
 import './Docs.css';
 
 export function Docs() {
@@ -15,6 +15,10 @@ export function Docs() {
             <a href="#installation" className="sidebar-link">
               <Settings size={14} />
               Installation & OS Guide
+            </a>
+            <a href="#file-types" className="sidebar-link">
+              <FileText size={14} />
+              Supported File Types
             </a>
             <a href="#permissions" className="sidebar-link">
               <Shield size={14} />
@@ -80,6 +84,38 @@ export function Docs() {
             <li><strong>macOS:</strong> Similar to Linux, you might need <code>sudo</code> if using the default system Node.js.</li>
             <li><strong>Windows:</strong> Open Command Prompt or PowerShell as Administrator to install global packages without permission errors.</li>
           </ul>
+        </section>
+
+        <section id="file-types" className="docs-section">
+          <h2>Supported File Types</h2>
+          <p>
+            When publishing or updating prompts on the platform, the CLI enforces file type validation. 
+            Only text-based files with approved extensions are allowed to prevent database corruption and ensure security.
+          </p>
+          <div className="command-card">
+            <h4>Allowed File Extensions</h4>
+            <p style={{ marginBottom: '1rem' }}>
+              The CLI parses and validates files based on their extension. The only supported formats are:
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.25rem' }}>
+              {['.md', '.txt', '.yaml', '.yml', '.json', '.xml', '.docs', '.log'].map(ext => (
+                <span key={ext} style={{ 
+                  backgroundColor: 'rgba(255, 255, 255, 0.05)', 
+                  border: '1px solid var(--border-color)', 
+                  borderRadius: '4px', 
+                  padding: '0.25rem 0.6rem', 
+                  fontSize: '0.85rem',
+                  fontFamily: 'monospace',
+                  color: 'var(--text-primary)'
+                }}>
+                  {ext}
+                </span>
+              ))}
+            </div>
+            <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+              <strong>Restriction Rule:</strong> Any attempt to upload binaries, executables, or non-text formats (such as <code>.exe</code>, <code>.png</code>, <code>.jpg</code>, <code>.pdf</code>, <code>.zip</code>) will be immediately blocked by the CLI validator.
+            </p>
+          </div>
         </section>
 
         <section id="permissions" className="docs-section">
