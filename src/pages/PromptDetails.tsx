@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
 import ReactMarkdown from 'react-markdown';
 import { ChevronLeft, Clock, User, Tag as TagIcon, Activity } from 'lucide-react';
 import { supabase } from '../lib/supabase';
@@ -10,35 +10,24 @@ import './PromptDetails.css';
 export function PromptDetails() {
   const { username, promptName } = useParams<{ username: string; promptName: string }>();
   
-  const [prompt, setPrompt] = useState<Prompt | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    async function fetchPrompt() {
-      if (!username || !promptName) return;
+  const { data: prompt, isLoading: loading, error } = useQuery({
+    queryKey: ['prompt', username, promptName],
+    queryFn: async () => {
+      if (!username || !promptName) throw new Error('Missing parameters');
       
-      setLoading(true);
-      try {
-        const { data, error: fetchError } = await supabase
-          .from('prompts')
-          .select('*')
-          .eq('username', username)
-          .eq('name', promptName)
-          .single();
+      const { data, error: fetchError } = await supabase
+        .from('prompts')
+        // We need all columns here because we need current_content to render the prompt text
+        .select('*')
+        .eq('username', username)
+        .eq('name', promptName)
+        .single();
 
-        if (fetchError) throw fetchError;
-        setPrompt(data as unknown as Prompt);
-      } catch (err: any) {
-        console.error('Error fetching prompt details:', err);
-        setError('Prompt not found or you do not have permission to view it.');
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchPrompt();
-  }, [username, promptName]);
+      if (fetchError) throw fetchError;
+      return data as unknown as Prompt;
+    },
+    enabled: !!username && !!promptName, // only run the query if params exist
+  });
 
   if (loading) {
     return (
@@ -53,7 +42,7 @@ export function PromptDetails() {
     return (
       <div className="prompt-details-page error-state container">
         <h2>Oops!</h2>
-        <p>{error || 'Prompt not found.'}</p>
+        <p>{error instanceof Error ? error.message : 'Prompt not found.'}</p>
         <Link to="/explore" className="back-link">
           <ChevronLeft size={16} /> Back to Explore
         </Link>
