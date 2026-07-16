@@ -27,13 +27,14 @@ body,
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
 }
 
 /* Custom Scrollbar for Webkit browsers */
 ::-webkit-scrollbar {
   width: 4px;
   height: 4px;
+  transition: background .5s;
 }
 
 ::-webkit-scrollbar-track {
