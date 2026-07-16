@@ -16,7 +16,7 @@
 .prompt-card:hover {
   transform: translateY(-2px);
   border-color: #444;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 40px rgba(255, 255, 255, 0.1);
 }
 
 .prompt-card-header {
@@ -26,7 +26,7 @@
   margin-bottom: 0.75rem;
 }
 
-.prompt-title {
+.prompt-card .prompt-title {
   display: flex;
   align-items: center;
   gap: 0.5rem;

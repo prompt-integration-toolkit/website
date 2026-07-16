@@ -21,7 +21,7 @@ export interface Prompt {
   status: string;
   deleted_at: string | null;
   
-  // Relacionamentos Opcionais
+  // Optional Relationships
   profile?: Profile;
   prompt_versions?: PromptVersion[];
 }

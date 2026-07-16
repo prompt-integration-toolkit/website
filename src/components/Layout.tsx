@@ -1,4 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Compass, BookOpen, GitBranch } from 'lucide-react';
 import pitLogo from '../assets/pit-logo.png';
 import './Layout.css';
 
@@ -15,9 +16,18 @@ export function Layout() {
             <span className="logo-text">Prompt Integration Toolkit</span>
           </Link>
           <nav className="nav-links flex gap-8">
-            <Link to="/explore" className="nav-link">Explore</Link>
-            <Link to="/docs" className="nav-link">Documentation</Link>
-            <a href="https://github.com/prompt-integration-toolkit" target="_blank" rel="noreferrer" className="nav-link">GitHub</a>
+            <Link to="/explore" className="nav-link">
+              <Compass size={16} />
+              Explore
+            </Link>
+            <Link to="/docs" className="nav-link">
+              <BookOpen size={16} />
+              Documentation
+            </Link>
+            <a href="https://github.com/prompt-integration-toolkit" target="_blank" rel="noreferrer" className="nav-link">
+              <GitBranch size={16} />
+              GitHub
+            </a>
           </nav>
         </div>
       </header>

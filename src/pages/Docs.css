@@ -1,6 +1,7 @@
 .docs-layout {
   display: flex;
   gap: 3rem;
+  width: 100%;
 }
 
 .docs-sidebar {
@@ -38,6 +39,9 @@
 }
 
 .sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.95rem;
   color: var(--text-secondary);
   transition: color 0.2s;

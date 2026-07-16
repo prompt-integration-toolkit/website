@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Zap, GitBranch, Globe, BookOpen, Code } from 'lucide-react';
 import './Home.css';
 
 export function Home() {
@@ -18,8 +19,12 @@ export function Home() {
           The ultimate ecosystem to organize your workflow.
         </p>
         <div className="hero-actions flex justify-center gap-4">
-          <Link to="/docs" className="btn btn-primary">Read the Documentation</Link>
+          <Link to="/docs" className="btn btn-primary">
+            <BookOpen size={18} />
+            Read the Documentation
+          </Link>
           <a href="https://github.com/prompt-integration-toolkit/prompt-it-cli" target="_blank" rel="noreferrer" className="btn btn-secondary">
+            <Code size={18} />
             View CLI on GitHub
           </a>
         </div>
@@ -27,17 +32,23 @@ export function Home() {
 
       <section className="features container">
         <div className="feature-card">
-          <div className="feature-icon">⚡</div>
+          <div className="feature-icon">
+            <Zap size={28} />
+          </div>
           <h3>Fast Injection</h3>
           <p>Apply complex rules to your agents with simple commands like <code>prompt-it get frontend-rules</code>.</p>
         </div>
         <div className="feature-card">
-          <div className="feature-icon">🔄</div>
+          <div className="feature-icon">
+            <GitBranch size={28} />
+          </div>
           <h3>Versioning</h3>
           <p>Keep a history of all your prompts and revert to previous versions instantly.</p>
         </div>
         <div className="feature-card">
-          <div className="feature-icon">🌐</div>
+          <div className="feature-icon">
+            <Globe size={28} />
+          </div>
           <h3>Sharing</h3>
           <p>Synchronize your prompts in the cloud and share the same context with your entire team.</p>
         </div>

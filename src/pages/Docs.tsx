@@ -1,3 +1,4 @@
+import { Terminal, Settings, Shield, UserCheck, ListChecks, Search, Cpu, HelpCircle } from 'lucide-react';
 import './Docs.css';
 
 export function Docs() {
@@ -7,14 +8,38 @@ export function Docs() {
         <div className="sidebar-sticky">
           <h3 className="sidebar-title">On this page</h3>
           <nav className="sidebar-nav">
-            <a href="#getting-started" className="sidebar-link">Getting Started</a>
-            <a href="#installation" className="sidebar-link">Installation & OS Guide</a>
-            <a href="#permissions" className="sidebar-link">Permissions & Errors</a>
-            <a href="#accounts" className="sidebar-link">Accounts & Authentication</a>
-            <a href="#management" className="sidebar-link">Prompt Management</a>
-            <a href="#search" className="sidebar-link">Search & Consumption</a>
-            <a href="#agents" className="sidebar-link">Agent Integration</a>
-            <a href="#workflow" className="sidebar-link">Recommended Workflow</a>
+            <a href="#getting-started" className="sidebar-link">
+              <Terminal size={14} />
+              Getting Started
+            </a>
+            <a href="#installation" className="sidebar-link">
+              <Settings size={14} />
+              Installation & OS Guide
+            </a>
+            <a href="#permissions" className="sidebar-link">
+              <Shield size={14} />
+              Permissions & Errors
+            </a>
+            <a href="#accounts" className="sidebar-link">
+              <UserCheck size={14} />
+              Accounts & Authentication
+            </a>
+            <a href="#management" className="sidebar-link">
+              <ListChecks size={14} />
+              Prompt Management
+            </a>
+            <a href="#search" className="sidebar-link">
+              <Search size={14} />
+              Search & Consumption
+            </a>
+            <a href="#agents" className="sidebar-link">
+              <Cpu size={14} />
+              Agent Integration
+            </a>
+            <a href="#workflow" className="sidebar-link">
+              <HelpCircle size={14} />
+              Recommended Workflow
+            </a>
           </nav>
         </div>
       </aside>

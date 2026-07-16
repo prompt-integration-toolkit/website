@@ -1,7 +1,9 @@
 .prompt-details-page {
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
+  width: 100%;
 }
 
+/* Back Link */
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -17,63 +19,71 @@
   color: var(--text-primary);
 }
 
+/* Two-Column Layout */
 .prompt-layout {
   display: flex;
-  gap: 3rem;
-  align-items: flex-start;
   flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+  align-items: stretch;
 }
 
 @media (min-width: 900px) {
   .prompt-layout {
     flex-direction: row;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .prompt-main {
+    flex: 1 1 0%;
+    width: calc(100% - 320px - 3rem);
+  }
+
+  .prompt-sidebar {
+    flex: 0 0 320px;
   }
 }
 
+/* Main Content Area */
 .prompt-main {
-  flex: 1;
   min-width: 0;
   width: 100%;
 }
 
-.prompt-sidebar {
-  width: 100%;
-}
-
-@media (min-width: 900px) {
-  .prompt-sidebar {
-    width: 320px;
-    flex-shrink: 0;
-  }
-}
-
 .prompt-header {
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
-.prompt-title {
-  font-size: 2.5rem;
+.prompt-details-page .prompt-title {
+  font-size: 2.25rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.03em;
 }
 
 .prompt-desc-large {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: var(--text-secondary);
   line-height: 1.6;
 }
 
+/* Prompt Content Box */
 .prompt-content-box {
-  background-color: rgba(15, 15, 15, 0.4);
+  background-color: rgba(15, 15, 15, 0.5);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Base Markdown Styles */
+/* Markdown Rendering */
 .markdown-body {
   color: var(--text-primary);
   line-height: 1.7;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .markdown-body h1,
@@ -84,12 +94,32 @@
   font-weight: 600;
 }
 
-.markdown-body h1 { font-size: 2rem; }
-.markdown-body h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
-.markdown-body h3 { font-size: 1.25rem; }
+.markdown-body h1 {
+  font-size: 2rem;
+}
+
+.markdown-body h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.markdown-body h3 {
+  font-size: 1.25rem;
+}
 
 .markdown-body p {
   margin-bottom: 1.25rem;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.markdown-body li {
+  margin-bottom: 0.4rem;
 }
 
 .markdown-body pre {
@@ -115,7 +145,18 @@
   font-size: 0.9em;
 }
 
-/* Sidebar Styles */
+.markdown-body blockquote {
+  border-left: 3px solid var(--border-color);
+  padding-left: 1rem;
+  margin: 0 0 1.25rem 0;
+  color: var(--text-secondary);
+}
+
+/* Sidebar */
+.prompt-sidebar {
+  width: 100%;
+}
+
 .sidebar-sticky {
   position: sticky;
   top: 6rem;
@@ -127,16 +168,16 @@
 .install-box,
 .metadata-box,
 .tags-box {
-  background-color: rgba(15, 15, 15, 0.4);
+  background-color: rgba(15, 15, 15, 0.5);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.5rem;
 }
 
 .sidebar-sticky h3 {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   color: var(--text-secondary);
   margin-bottom: 1rem;
   font-weight: 500;
@@ -166,6 +207,18 @@
   gap: 0.5rem;
 }
 
+/* Loading State */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Error State */
 .error-state {
   text-align: center;
   padding: 6rem 0;
