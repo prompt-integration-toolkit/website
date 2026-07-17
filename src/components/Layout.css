@@ -5,12 +5,23 @@
 }
 
 .header {
-  border-bottom: 1px solid var(--border-color);
-  background-color: rgba(5, 5, 5, 0.8);
-  backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(5, 5, 5, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: -1; /* Fica atrás do texto do header, mas acima do resto do site */
 }
 
 .header-content {
@@ -67,24 +78,56 @@
   font-size: 0.875rem;
 }
 
-/* --- Ajustes para Celular (Mobile) --- */
+/* --- Menu Mobile --- */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
 @media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    height: auto;
-    padding: 1rem 0;
-    gap: 0.75rem;
-  }
-  
   .logo {
-    font-size: 1.15rem;
-    text-align: center;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 75%;
+    /* O ::before no .header já resolve a sobreposição! */
   }
-  
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
   .nav-links {
-    gap: 1.25rem !important; /* Sobrescreve o gap-8 do HTML no mobile */
-    justify-content: center;
+    position: absolute;
+    top: 0; /* Começa do topo 0, atrás do header */
+    left: 0;
     width: 100%;
-    flex-wrap: wrap; /* Caso a tela seja muito pequena, os links quebram linha bonito */
+    background-color: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    flex-direction: column;
+    padding: 2rem;
+    padding-top: 90px; /* Compensa o tamanho do header para os links não sumirem */
+    gap: 2rem !important;
+    border-bottom: 1px solid var(--border-color);
+
+    /* Animação do dropdown fechado */
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: -2; /* Atrás da barra preta do header (que tem z-index: -1) */
+  }
+
+  /* Animação do dropdown aberto */
+  .nav-links.mobile-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
 }
