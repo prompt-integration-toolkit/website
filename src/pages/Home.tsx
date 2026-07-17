@@ -7,16 +7,16 @@ export function Home() {
     <div className="home fade-in">
       <div className="bg-glow top-glow"></div>
       <div className="bg-glow bottom-glow"></div>
-      
+
       <section className="hero container">
         <div className="hero-badge">Introducing v1.0.0</div>
         <h1 className="hero-title">
-          The "NPM" for <br />
-          <span className="gradient-text">Artificial Intelligence Prompts</span>
+          The ecosystem for<br />
+          <span className="gradient-text">Agents and AI Prompts</span>
         </h1>
         <p className="hero-subtitle">
-          Manage, version, and inject contexts into your AI agents with a single command. 
-          The ultimate ecosystem to organize your workflow.
+          Manage, version, and inject contexts into your AI agents with a single command.
+          The ultimate toolkit to organize your workflow.
         </p>
         <div className="hero-actions flex justify-center gap-4">
           <Link to="/docs" className="btn btn-primary">

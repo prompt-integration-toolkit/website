@@ -1,6 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Compass, BookOpen, GitBranch } from 'lucide-react';
-import pitLogo from '../assets/pit-logo.png';
 import './Layout.css';
 
 export function Layout() {
@@ -12,7 +11,6 @@ export function Layout() {
       <header className="header">
         <div className="container flex justify-between items-center header-content">
           <Link to="/" className="logo">
-            <img src={pitLogo} alt="Prompt-It Logo" className="logo-img" />
             <span className="logo-text">Prompt Integration Toolkit</span>
           </Link>
           <nav className="nav-links flex gap-8">

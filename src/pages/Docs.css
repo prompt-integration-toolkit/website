@@ -46,10 +46,36 @@
   color: var(--text-secondary);
   transition: color 0.2s;
   font-weight: 400;
+  position: relative;
+  width: fit-content;
+}
+
+.sidebar-link::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  opacity: 0.5;
+  filter: blur(20px);
+  transform: translateY(2px);
+  transition: all 0.2s ease-in-out;
 }
 
 .sidebar-link:hover {
   color: var(--text-primary);
+}
+
+.sidebar-link:hover::after {
+  opacity: 0.8;
+  left: 0;
+  top: 100%;
+  height: 2px;
+  width: 100%;
+  filter: blur(0px);
 }
 
 .docs-content {
@@ -80,7 +106,7 @@
   border-bottom: 1px solid var(--border-color);
 }
 
-.docs-section > p {
+.docs-section>p {
   margin-bottom: 2rem;
   color: var(--text-secondary);
 }
